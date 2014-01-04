@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var program = require('commander'),
+    fs = require('fs'),
+    roro = require('..');
+
+program
+    .version(require('../package.json').version)
+    .usage('[options] <file>')
+    .option('-b, --browsers [config]', 'specify the browsers for autoprefixer')
+    .option('-f, --baseFontSize [font-size]', 'set the base font size')
+    .option('-o, --out [file]', 'write the output to a file')
+    .parse(process.argv);
+
+var inputFile = program.args[0];
+
+if(!inputFile || !fs.existsSync(inputFile)) {
+    console.log(program.help());
+    process.exit(-1);
+}
+
+var input = fs.readFileSync(inputFile).toString(),
+    options = {},
+    browsers = program.browsers ? program.browsers.split(',').map(function(b) { return b.trim(); }) : undefined;
+
+options.browsers = browsers;
+options.baseFontSize = program.baseFontSize || undefined;
+
+output(
+    roro(input, options)
+);
+
+function output(contents) {
+    if(program.out) {
+        var out = process.cwd() + '/' + program.out;
+        fs.writeFileSync(out, contents);
+        console.log('Successfully wrote ' + out);
+    } else {
+        process.stdout.write(contents);
+    }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "roro",
+  "version": "0.0.1",
+  "author": "@fmal",
+  "repository": "git://github.com/fmal/roro.git",
+  "description": "A little CSS preprocessor",
+  "keywords": [
+    "css",
+    "preprocessor",
+    "preprocess"
+  ],
+  "dependencies": {
+    "commander": "~2.1.0",
+    "autoprefixer": "~0.8.20131213",
+    "colors": "~0.6.2",
+    "rework": "~0.20.2",
+    "rework-mixins": "~1.1.1",
+    "rework-vars": "~2.0.2",
+    "rework-calc": "~0.2.1",
+    "rework-color-function": "0.1.2",
+    "rework-hex-alpha": "0.0.3",
+    "rework-rem-fallback": "~1.0.0"
+  },
+  "bin": {
+    "roro": "bin/roro"
+  },
+  "main": "index"
+}

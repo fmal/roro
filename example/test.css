@@ -1,0 +1,23 @@
+:root {
+    var-purple: #847AD1;
+}
+
+html {
+    font-size: 100%;
+    color: var(purple);
+    background-image: linear-gradient(to bottom, var(purple), white);
+}
+
+body {
+    font-size: .75rem;
+}
+
+a {
+    color: var(purple);
+    transition: color .2s;
+}
+
+a:hover {
+    color: color(var(purple) tint(20%));
+    opacity: .5;
+}
