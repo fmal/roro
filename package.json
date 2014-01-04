@@ -1,7 +1,7 @@
 {
   "name": "roro",
   "version": "0.0.1",
-  "author": "@fmal",
+  "author": "Filip Malinowski <crimhead@gmail.com>",
   "repository": "git://github.com/fmal/roro.git",
   "description": "A little CSS preprocessor",
   "keywords": [
