@@ -27,5 +27,14 @@ $ roro -h
     -V, --version                   output the version number
     -b, --browsers [config]         specify the browsers for autoprefixer
     -f, --baseFontSize [font-size]  set the base font size
+    -d, --dir [directory]           the directory where the source file is located
     -o, --out [file]                write the output to a file
 ```
+
+## Imports
+
+```css
+@import "node-package-name";
+```
+
+roro reads CSS imports and inlines the CSS at that path for you. It also understands node modules. Uses [rework-npm](https://github.com/conradz/rework-npm).

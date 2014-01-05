@@ -7,6 +7,7 @@ var rework = require('rework'),
     color = require('rework-color-function'),
     hex = require('rework-hex-alpha'),
     remFallback = require('rework-rem-fallback'),
+    reworkNPM = require('rework-npm'),
     mixins = require('rework-mixins'),
     opacity = require('./lib/opacity');
 
@@ -21,9 +22,11 @@ function roro(str, options) {
 
     var browsers = options.browsers || autoprefixer['default'],
         baseFontSize = options.baseFontSize ? parseInt(options.baseFontSize, 10) : 16,
+        dir = options.dir,
         css;
 
     css = rework(str)
+        .use(reworkNPM(dir))
         .use(vars())
         .use(hex)
         .use(color)

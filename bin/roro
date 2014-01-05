@@ -4,6 +4,7 @@
 
 var program = require('commander'),
     fs = require('fs'),
+    path = require('path'),
     roro = require('..');
 
 program
@@ -11,6 +12,7 @@ program
     .usage('[options] <file>')
     .option('-b, --browsers [config]', 'specify the browsers for autoprefixer')
     .option('-f, --baseFontSize [font-size]', 'set the base font size')
+    .option('-d, --dir [directory]', 'the directory where the source file is located')
     .option('-o, --out [file]', 'write the output to a file')
     .parse(process.argv);
 
@@ -27,6 +29,7 @@ var input = fs.readFileSync(inputFile).toString(),
 
 options.browsers = browsers;
 options.baseFontSize = program.baseFontSize || undefined;
+options.dir = program.dir || path.dirname(inputFile);
 
 output(
     roro(input, options)
