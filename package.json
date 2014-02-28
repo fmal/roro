@@ -1,6 +1,6 @@
 {
   "name": "roro",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": "Filip Malinowski <crimhead@gmail.com>",
   "repository": "git://github.com/fmal/roro.git",
   "description": "A little CSS preprocessor",
@@ -11,7 +11,7 @@
   ],
   "dependencies": {
     "commander": "~2.1.0",
-    "autoprefixer": "~1.1.20140226",
+    "autoprefixer": "~0.8.20131213",
     "colors": "~0.6.2",
     "rework": "~0.20.2",
     "rework-mixins": "~1.1.1",
